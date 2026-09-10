@@ -384,39 +384,30 @@
       gap: 2.5rem;
       align-items: center;
     }
-    .hero-art { position: relative; }
-    .hero-art-label {
-      display: block;
-      margin-bottom: 0.35rem;
-      color: var(--brand);
-      font-size: 0.8125rem;
-      font-weight: 700;
-    }
-    .hero-art-title {
-      max-width: 16rem;
-      margin: 0 0 1rem;
-      color: var(--ink);
-      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.2;
+    .hero-art { position: relative; padding-bottom: 1.35rem; }
+    .hero-art .frame,
+    .hero-art .chat-card,
+    .hero-art .chat-body {
+      overflow: visible;
     }
     .charge-chip {
       position: absolute;
       z-index: 4;
-      left: 0;
-      bottom: 1.35rem;
+      left: 50%;
+      bottom: -1.15rem;
       display: flex;
       gap: 0.65rem;
       align-items: center;
-      max-width: 16.5rem;
-      padding: 0.75rem 0.9rem;
+      width: max-content;
+      max-width: calc(100% - 1.5rem);
+      padding: 0.7rem 0.85rem;
       border-radius: 0.95rem;
       background: #fff;
       box-shadow: 0 16px 30px rgba(4, 45, 77, 0.24);
       color: #17345c;
       font-size: 0.75rem;
       font-weight: 700;
+      transform: translateX(-50%);
     }
     .charge-icon {
       flex: 0 0 1.95rem;
@@ -437,13 +428,6 @@
     html[data-theme="dark"] .charge-icon {
       background: rgba(22, 163, 74, 0.16);
       color: #86efac;
-    }
-    @media (max-width: 520px) {
-      .charge-chip {
-        position: static;
-        margin-top: 0.85rem;
-        max-width: none;
-      }
     }
     @media (min-width: 960px) {
       .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
@@ -573,11 +557,12 @@
     .chat-meta { margin-top: 0.15rem; font-size: 0.75rem; color: #64748b; }
     .chat-time { margin-left: auto; font-size: 0.75rem; color: #94a3b8; white-space: nowrap; }
     .chat-body {
+      position: relative;
       display: flex;
       flex-direction: column;
       gap: 0.65rem;
       min-height: 15.5rem;
-      padding: 1rem 1.05rem 1.1rem;
+      padding: 1rem 1.05rem 1.85rem;
       background: #eaf3ff;
     }
     html[data-theme="dark"] .chat-body { background: #080808; }
@@ -607,32 +592,51 @@
       border-bottom-right-radius: 0.3rem;
     }
     .strip {
-      padding: 1.55rem 0;
-      background: var(--band);
+      padding: 1.85rem 0;
+      background: #102448;
       color: #fff;
     }
     .strip-inner {
       display: grid;
-      gap: 1rem;
+      gap: 1.15rem;
       align-items: center;
     }
     @media (min-width: 768px) {
-      .strip-inner { grid-template-columns: 11.25rem 1fr; gap: 2rem; }
+      .strip-inner { grid-template-columns: 13.5rem 1fr; gap: 2.25rem; }
     }
     .strip-title {
       font-size: 0.875rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      line-height: 1.45;
       color: #a9c2dd;
     }
-    .checks { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+    @media (min-width: 768px) {
+      .strip-title {
+        padding-right: 2.25rem;
+        border-right: 1px solid rgba(169, 194, 221, 0.22);
+      }
+    }
+    .checks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.75rem;
+    }
     .check {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      font-size: 0.875rem;
-      font-weight: 600;
+      font-size: 0.9375rem;
+      font-weight: 700;
       color: #fff;
+    }
+    .strip .tick {
+      width: auto;
+      height: auto;
+      flex: none;
+      border-radius: 0;
+      background: none;
+      color: #69d7b3;
+      font-size: 14px;
     }
     .tick {
       width: 22px;
@@ -1335,9 +1339,6 @@
             <p class="note" data-l="en">This change involves Meta charges. It is not a change to your Wabot subscription fee.</p>
           </div>
           <div class="hero-art">
-            <span class="hero-art-label">WhatsApp Official API</span>
-            <div class="hero-art-title" data-l="bm">Kenal pasti penggunaan anda dahulu.</div>
-            <div class="hero-art-title" data-l="en">Identify your usage first.</div>
             <div class="frame">
               <div class="frame-bar">
                 <div class="frame-dots" aria-hidden="true">
@@ -1361,13 +1362,13 @@
                   <div class="bubble in"><span data-l="bm">Hi, ada class minggu ni ke?</span><span data-l="en">Hi, do you have any classes this week?</span></div>
                   <div class="bubble out"><span data-l="bm">Ada, Sarah. Esok 7:00 PM ada 4 seat lagi. Nak saya tahan satu?</span><span data-l="en">Hi Sarah! Yes — tomorrow 7:00 PM, 4 seats left. Want me to hold one?</span></div>
                   <div class="bubble in"><span data-l="bm">Yes please, book esok 7 malam.</span><span data-l="en">Yes please — book tomorrow evening.</span></div>
+                  <div class="charge-chip">
+                    <span class="charge-icon" aria-hidden="true">✓</span>
+                    <span data-l="bm">Bukan semua reply akan dicaj</span>
+                    <span data-l="en">Not every reply will be charged</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="charge-chip">
-              <span class="charge-icon" aria-hidden="true">✓</span>
-              <span data-l="bm">Bukan semua reply akan dicaj</span>
-              <span data-l="en">Not every reply will be charged</span>
             </div>
           </div>
         </div>
