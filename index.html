@@ -945,13 +945,61 @@
       min-height: 100%;
     }
     .ads-visual {
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      min-height: 20.625rem;
       overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 1.5rem;
-      background: var(--surface);
-      box-shadow: var(--card-shadow);
+      border: 1px solid #d9edf9;
+      border-radius: 1.875rem;
+      background: linear-gradient(140deg, #d8f2ff, #f3fbff);
+    }
+    @media (min-width: 900px) {
+      .ads-visual { min-height: 24.375rem; }
+    }
+    html[data-theme="dark"] .ads-visual {
+      background: linear-gradient(140deg, #10233d, #0d1117);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .ads-circle {
+      position: absolute;
+      width: min(19.375rem, 72%);
+      aspect-ratio: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 18px 50px rgba(8, 79, 131, 0.2);
+    }
+    .ads-circle:before {
+      content: "72H";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: clamp(2.75rem, 8vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.08em;
+    }
+    .ads-tag {
+      position: absolute;
+      z-index: 1;
+      max-width: 11.5rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.875rem;
+      background: #fff;
+      box-shadow: 0 14px 32px rgba(29, 84, 123, 0.14);
+      color: #214665;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .ads-tag.one { left: 1.3rem; top: 3.25rem; }
+    .ads-tag.two { right: 0.95rem; bottom: 3.8rem; }
+    html[data-theme="dark"] .ads-tag {
+      background: #111827;
+      color: #fff;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
     }
     .ads-copy {
       display: flex;
@@ -959,105 +1007,6 @@
       justify-content: center;
     }
     .ads-copy h2 { max-width: none; }
-    html[data-theme="dark"] .ads-visual {
-      background: #0d1117;
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-    .fep-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 0.75rem;
-      padding: 1.5rem 1.5rem 1.15rem;
-      border-bottom: 1px solid var(--line-soft);
-    }
-    .fep-head strong {
-      display: flex;
-      align-items: baseline;
-      gap: 0.15rem;
-      font-size: 2.75rem;
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      line-height: 1;
-      color: var(--brand);
-    }
-    .fep-head strong em {
-      font-style: normal;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0;
-    }
-    .fep-head span {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-    }
-    .fep-meter { padding: 1.75rem 1.5rem 0; }
-    .fep-track {
-      position: relative;
-      height: 0.5rem;
-      border-radius: 999px;
-      background: var(--brand-tint);
-    }
-    .fep-fill {
-      position: absolute;
-      inset: 0 66.7% 0 0;
-      border-radius: 999px;
-      background: var(--brand);
-    }
-    .fep-dot {
-      position: absolute;
-      top: 50%;
-      width: 0.8rem;
-      height: 0.8rem;
-      margin-top: -0.4rem;
-      border-radius: 999px;
-      background: var(--surface);
-      box-shadow: 0 0 0 3px var(--brand);
-    }
-    html[data-theme="dark"] .fep-dot { background: #0d1117; }
-    .fep-dot.start { left: 0; }
-    .fep-dot.mid { left: 33.3%; margin-left: -0.4rem; }
-    .fep-dot.end { right: 0; box-shadow: 0 0 0 3px var(--ink-mute); }
-    .fep-scale {
-      position: relative;
-      height: 1.35rem;
-      margin-top: 0.55rem;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: var(--ink-mute);
-    }
-    .fep-scale span { position: absolute; top: 0; white-space: nowrap; }
-    .fep-scale .s0 { left: 0; }
-    .fep-scale .s24 { left: 33.3%; transform: translateX(-50%); }
-    .fep-scale .s72 { right: 0; }
-    .fep-notes {
-      display: grid;
-      gap: 0.75rem;
-      flex: 1;
-      align-content: start;
-      padding: 1.15rem 1.5rem 1.5rem;
-    }
-    .fep-note {
-      display: flex;
-      gap: 0.65rem;
-      align-items: flex-start;
-      font-size: 0.8125rem;
-      line-height: 1.5;
-      color: var(--ink-soft);
-    }
-    .fep-note i {
-      flex: 0 0 0.5rem;
-      width: 0.5rem;
-      height: 0.5rem;
-      margin-top: 0.42rem;
-      border-radius: 999px;
-      background: var(--brand);
-    }
-    .fep-note.muted i { background: var(--ink-mute); }
-    .fep-note b { color: var(--ink); font-weight: 600; }
     .ads-wrap .intro { margin-bottom: 0; }
     .ads-list { display: grid; gap: 0.85rem; margin-top: 1.4rem; }
     .ads-list div {
@@ -1525,40 +1474,15 @@
 
       <section class="section">
         <div class="wrap ads-wrap">
-          <div class="ads-visual">
-            <div class="fep-head">
-              <strong>72<em>h</em></strong>
-              <span>Free Entry Point</span>
+          <div class="ads-visual" aria-label="Infografik 72-hour Free Entry Point">
+            <div class="ads-circle" aria-hidden="true"></div>
+            <div class="ads-tag one">
+              <span data-l="bm">Lead masuk melalui<br>Click-to-WhatsApp</span>
+              <span data-l="en">Lead comes in through<br>Click-to-WhatsApp</span>
             </div>
-            <div class="fep-meter">
-              <div class="fep-track" aria-hidden="true">
-                <span class="fep-fill"></span>
-                <span class="fep-dot start"></span>
-                <span class="fep-dot mid"></span>
-                <span class="fep-dot end"></span>
-              </div>
-              <div class="fep-scale" aria-hidden="true">
-                <span class="s0">0h</span>
-                <span class="s24">24h</span>
-                <span class="s72">72h</span>
-              </div>
-            </div>
-            <div class="fep-notes">
-              <div class="fep-note">
-                <i aria-hidden="true"></i>
-                <span data-l="bm"><b>Lead masuk</b> — bisnes balas, FEP terbuka</span>
-                <span data-l="en"><b>Lead comes in</b> — business replies, FEP opens</span>
-              </div>
-              <div class="fep-note">
-                <i aria-hidden="true"></i>
-                <span data-l="bm"><b>Senyap 24 jam</b> — follow-up perlu approved template</span>
-                <span data-l="en"><b>Quiet for 24h</b> — follow-ups need an approved template</span>
-              </div>
-              <div class="fep-note muted">
-                <i aria-hidden="true"></i>
-                <span data-l="bm"><b>72 jam tamat</b> — FEP tidak restart</span>
-                <span data-l="en"><b>72 hours up</b> — the FEP does not restart</span>
-              </div>
+            <div class="ads-tag two">
+              <span data-l="bm">FEP tidak restart<br>apabila customer reply</span>
+              <span data-l="en">FEP does not restart<br>when the customer replies</span>
             </div>
           </div>
           <div class="ads-copy">
