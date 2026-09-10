@@ -384,6 +384,67 @@
       gap: 2.5rem;
       align-items: center;
     }
+    .hero-art { position: relative; }
+    .hero-art-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--brand);
+      font-size: 0.8125rem;
+      font-weight: 700;
+    }
+    .hero-art-title {
+      max-width: 16rem;
+      margin: 0 0 1rem;
+      color: var(--ink);
+      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+    }
+    .charge-chip {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      bottom: 1.35rem;
+      display: flex;
+      gap: 0.65rem;
+      align-items: center;
+      max-width: 16.5rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.95rem;
+      background: #fff;
+      box-shadow: 0 16px 30px rgba(4, 45, 77, 0.24);
+      color: #17345c;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .charge-icon {
+      flex: 0 0 1.95rem;
+      width: 1.95rem;
+      height: 1.95rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.65rem;
+      background: #e7f7ef;
+      color: #13966f;
+      font-size: 1rem;
+    }
+    html[data-theme="dark"] .charge-chip {
+      background: #111827;
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
+    }
+    html[data-theme="dark"] .charge-icon {
+      background: rgba(22, 163, 74, 0.16);
+      color: #86efac;
+    }
+    @media (max-width: 520px) {
+      .charge-chip {
+        position: static;
+        margin-top: 0.85rem;
+        max-width: none;
+      }
+    }
     @media (min-width: 960px) {
       .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
     }
@@ -545,39 +606,24 @@
       color: #fff;
       border-bottom-right-radius: 0.3rem;
     }
-    .chat-note {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      align-self: center;
-      margin-top: 0.25rem;
-      border-radius: 999px;
-      background: #fff;
-      color: #15803d;
-      padding: 0.35rem 0.7rem;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
-    }
-    html[data-theme="dark"] .chat-note {
-      background: #18181b;
-      color: #86efac;
-    }
-
     .strip {
-      padding: 1.5rem 0;
-      border-top: 1px solid var(--line-soft);
-      border-bottom: 1px solid var(--line-soft);
-      background: rgba(255, 255, 255, 0.55);
+      padding: 1.55rem 0;
+      background: var(--band);
+      color: #fff;
     }
-    html[data-theme="dark"] .strip { background: rgba(15, 23, 42, 0.45); }
     .strip-inner {
       display: grid;
       gap: 1rem;
       align-items: center;
     }
     @media (min-width: 768px) {
-      .strip-inner { grid-template-columns: auto 1fr; gap: 2rem; }
+      .strip-inner { grid-template-columns: 11.25rem 1fr; gap: 2rem; }
+    }
+    .strip-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #a9c2dd;
     }
     .checks { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
     .check {
@@ -586,7 +632,7 @@
       gap: 0.55rem;
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--ink-soft);
+      color: #fff;
     }
     .tick {
       width: 22px;
@@ -709,10 +755,10 @@
     }
     .metric span { color: var(--ink-soft); font-size: 0.8125rem; }
 
+    .split-kicker { margin: 1.6rem 0 0.85rem; }
     .split-callout {
       display: grid;
       gap: 0;
-      margin-top: 1.4rem;
       overflow: hidden;
       background: var(--surface);
       border: 1px solid var(--line);
@@ -720,14 +766,16 @@
       box-shadow: var(--card-shadow);
     }
     @media (min-width: 800px) {
-      .split-callout { grid-template-columns: 1.15fr 0.85fr; }
+      .split-callout { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
     }
     .split-main, .split-aside { padding: 1.4rem 1.35rem; }
-    .split-main h3 {
+    .split-main h3,
+    .split-aside strong {
       font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin: 0.35rem 0 0.65rem;
+      line-height: 1.3;
+      margin: 0 0 0.65rem;
     }
     .split-aside {
       background: var(--surface-2);
@@ -736,21 +784,45 @@
     @media (min-width: 800px) {
       .split-aside { border-top: 0; border-left: 1px solid var(--line); }
     }
-    .split-aside strong { display: block; margin-bottom: 0.45rem; font-size: 0.95rem; }
 
-    .points {
+    .facts {
       display: grid;
-      gap: 0.85rem;
+      gap: 1.25rem;
     }
-    @media (min-width: 800px) { .points { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (min-width: 860px) {
+      .facts { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    .fact-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 16rem;
+      padding: 1.75rem 1.7rem;
+      border-radius: 1.375rem;
+      background: #eaf7ff;
+    }
+    html[data-theme="dark"] .fact-main {
+      background: #10233d;
+    }
+    .fact-main h3 {
+      max-width: 22rem;
+      margin: 0 0 1rem;
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .fact-main p { margin: 0; color: #45617c; }
+    html[data-theme="dark"] .fact-main p { color: #94a3b8; }
+    .fact-stack { display: grid; gap: 1.25rem; }
     .point {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 1.25rem;
-      padding: 1.25rem 1.2rem;
+      border-radius: 1.375rem;
+      padding: 1.5rem 1.55rem;
       box-shadow: var(--card-shadow);
     }
-    .point strong { display: block; font-size: 1rem; margin-bottom: 0.4rem; }
+    .point strong { display: block; font-size: 1.05rem; margin-bottom: 0.45rem; }
 
     .flow {
       display: grid;
@@ -965,8 +1037,8 @@
       display: grid;
       place-items: center;
       align-content: center;
-      width: 19.375rem;
-      height: 19.375rem;
+      width: 16.5rem;
+      height: 16.5rem;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -1004,8 +1076,8 @@
       font-weight: 800;
       line-height: 1.35;
     }
-    .ads-tag.one { left: 21px; top: 52px; }
-    .ads-tag.two { right: 15px; bottom: 61px; }
+    .ads-tag.one { left: 1.5rem; top: 1.5rem; }
+    .ads-tag.two { right: 1.5rem; bottom: 1.5rem; }
     html[data-theme="dark"] .ads-tag {
       background: #111827;
       color: #fff;
@@ -1013,12 +1085,12 @@
     }
     @media (max-width: 520px) {
       .ads-circle {
-        width: 14.5rem;
-        height: 14.5rem;
+        width: 13.5rem;
+        height: 13.5rem;
       }
       .ads-circle strong { font-size: 3.25rem; }
-      .ads-tag.one { left: 12px; top: 28px; }
-      .ads-tag.two { right: 12px; bottom: 28px; }
+      .ads-tag.one { left: 1rem; top: 1rem; }
+      .ads-tag.two { right: 1rem; bottom: 1rem; }
     }
     .ads-copy {
       display: flex;
@@ -1262,7 +1334,10 @@
             <p class="note" data-l="bm">Perubahan ini melibatkan caj Meta. Ia bukan perubahan yuran langganan Wabot.</p>
             <p class="note" data-l="en">This change involves Meta charges. It is not a change to your Wabot subscription fee.</p>
           </div>
-          <div>
+          <div class="hero-art">
+            <span class="hero-art-label">WhatsApp Official API</span>
+            <div class="hero-art-title" data-l="bm">Kenal pasti penggunaan anda dahulu.</div>
+            <div class="hero-art-title" data-l="en">Identify your usage first.</div>
             <div class="frame">
               <div class="frame-bar">
                 <div class="frame-dots" aria-hidden="true">
@@ -1286,17 +1361,21 @@
                   <div class="bubble in"><span data-l="bm">Hi, ada class minggu ni ke?</span><span data-l="en">Hi, do you have any classes this week?</span></div>
                   <div class="bubble out"><span data-l="bm">Ada, Sarah. Esok 7:00 PM ada 4 seat lagi. Nak saya tahan satu?</span><span data-l="en">Hi Sarah! Yes — tomorrow 7:00 PM, 4 seats left. Want me to hold one?</span></div>
                   <div class="bubble in"><span data-l="bm">Yes please, book esok 7 malam.</span><span data-l="en">Yes please — book tomorrow evening.</span></div>
-                  <div class="chat-note"><span class="tick">✓</span><span data-l="bm">Reply team/AI ni Service Message</span><span data-l="en">This team/AI reply is a Service Message</span></div>
                 </div>
               </div>
+            </div>
+            <div class="charge-chip">
+              <span class="charge-icon" aria-hidden="true">✓</span>
+              <span data-l="bm">Bukan semua reply akan dicaj</span>
+              <span data-l="en">Not every reply will be charged</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="strip">
+      <section class="strip" aria-label="Ringkasan panduan">
         <div class="wrap strip-inner">
-          <div style="font-weight:700;letter-spacing:-.02em"><span data-l="bm">Panduan ini membantu anda faham:</span><span data-l="en">This guide helps you understand:</span></div>
+          <div class="strip-title"><span data-l="bm">Panduan ini membantu anda faham:</span><span data-l="en">This guide helps you understand:</span></div>
           <div class="checks">
             <div class="check"><span class="tick">✓</span><span data-l="bm">Apa yang Meta caj</span><span data-l="en">What Meta charges for</span></div>
             <div class="check"><span class="tick">✓</span><span data-l="bm">Anggaran kos dalam RM</span><span data-l="en">Estimated cost in RM</span></div>
@@ -1392,9 +1471,9 @@
           </div>
           <p class="note" style="max-width:54rem;margin-top:1.25rem" data-l="bm">Nota: Ini ialah anggaran rujukan, bukan invois akhir. Ia tidak termasuk subscription Wabot, penggunaan AI/AI credits, cukai, caj kad atau markup provider jika berkenaan.</p>
           <p class="note" style="max-width:54rem;margin-top:1.25rem" data-l="en">Note: This is a reference estimate, not a final invoice. It excludes your Wabot subscription, AI/AI credit usage, taxes, card charges or provider markup where applicable.</p>
+          <p class="kicker split-kicker"><i></i><span data-l="bm">Pengecualian penting untuk lead daripada Meta Ads</span><span data-l="en">Important exception for leads from Meta Ads</span></p>
           <div class="split-callout">
             <div class="split-main">
-              <p class="kicker"><i></i><span data-l="bm">Pengecualian penting untuk lead daripada Meta Ads</span><span data-l="en">Important exception for leads from Meta Ads</span></p>
               <h3 data-l="bm">72-hour Free Entry Point tidak dikenakan caj Meta</h3>
               <h3 data-l="en">The 72-hour Free Entry Point is not charged by Meta</h3>
               <p class="muted" data-l="bm">Jika lead masuk melalui Click-to-WhatsApp Ad atau Facebook Page CTA yang layak, dan bisnes membalas dalam tempoh yang melayakkan Free Entry Point, respons AI, bot atau ejen dalam tetingkap 72 jam ini tidak dikenakan caj Meta.</p>
@@ -1417,25 +1496,27 @@
           <h2 data-l="en">Not every message or reply will be charged.</h2>
           <p class="intro" data-l="bm">Kesan caj bergantung pada jenis mesej, cara bisnes menggunakan WhatsApp Official API dan keadaan perbualan dengan customer.</p>
           <p class="intro" data-l="en">The impact depends on the message type, how the business uses the WhatsApp Official API and the state of the conversation with the customer.</p>
-          <div class="points">
-            <article class="point">
-              <strong data-l="bm">Corak outbound perlu lebih jelas</strong>
-              <strong data-l="en">Outbound patterns need to be clearer</strong>
-              <p class="muted" data-l="bm">Mulai 1 Oktober, fahami balasan AI chatbot, team reply, automasi follow-up dan template notifikasi.</p>
-              <p class="muted" data-l="en">From 1 October, understand AI chatbot replies, team replies, follow-up automation and notification templates.</p>
+          <div class="facts">
+            <article class="fact-main">
+              <h3 data-l="bm">Mulai 1 Oktober, fahami corak mesej outbound anda dengan lebih jelas.</h3>
+              <h3 data-l="en">From 1 October, understand your outbound message pattern more clearly.</h3>
+              <p data-l="bm">Ini termasuk balasan daripada AI chatbot, team reply, automasi follow-up dan template notifikasi.</p>
+              <p data-l="en">This includes replies from AI chatbots, team replies, follow-up automation and notification templates.</p>
             </article>
-            <article class="point">
-              <strong data-l="bm">Mesej customer masuk kekal tidak dicaj</strong>
-              <strong data-l="en">Incoming customer messages remain uncharged</strong>
-              <p class="muted" data-l="bm">Customer yang menghantar mesej kepada bisnes tidak dikenakan caj Meta.</p>
-              <p class="muted" data-l="en">Customers who send messages to a business are not charged by Meta.</p>
-            </article>
-            <article class="point">
-              <strong data-l="bm">Yuran Wabot dan caj Meta berasingan</strong>
-              <strong data-l="en">Wabot fees and Meta charges are separate</strong>
-              <p class="muted" data-l="bm">Sentiasa bezakan subscription Wabot, penggunaan AI dan caj Meta.</p>
-              <p class="muted" data-l="en">Always separate your Wabot subscription, AI usage and Meta charges.</p>
-            </article>
+            <div class="fact-stack">
+              <article class="point">
+                <strong data-l="bm">Mesej customer masuk kekal tidak dicaj</strong>
+                <strong data-l="en">Incoming customer messages remain uncharged</strong>
+                <p class="muted" data-l="bm">Customer yang menghantar mesej kepada bisnes tidak dikenakan caj Meta.</p>
+                <p class="muted" data-l="en">Customers who send messages to a business are not charged by Meta.</p>
+              </article>
+              <article class="point">
+                <strong data-l="bm">Yuran Wabot dan caj Meta berasingan</strong>
+                <strong data-l="en">Wabot fees and Meta charges are separate</strong>
+                <p class="muted" data-l="bm">Sentiasa bezakan subscription Wabot, penggunaan AI dan caj Meta.</p>
+                <p class="muted" data-l="en">Always separate your Wabot subscription, AI usage and Meta charges.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
