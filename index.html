@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="ms" data-theme="light" data-lang="bm">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panduan Caj Meta WhatsApp | Wabot</title>
+  <meta name="description" content="Panduan ringkas perubahan caj Meta WhatsApp Business Platform bermula 1 Oktober 2026.">
+  <link rel="icon" href="https://wabot.io/favicon-32x32.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #0072bc;
+      --brand-hover: #0060a0;
+      --brand-tint: #eaf3ff;
+      --brand-soft: rgba(0, 114, 188, 0.1);
+      --success: #16a34a;
+      --success-tint: #dcfce7;
+      --success-ink: #15803d;
+      --bg: #f8fafc;
+      --bg2: #f2fbff;
+      --surface: #ffffff;
+      --surface-2: #fbfdff;
+      --ink: #18181b;
+      --ink-soft: #475569;
+      --ink-mute: #64748b;
+      --line: #d9e6f0;
+      --line-soft: #e8f0f7;
+      --chip: #ffffff;
+      --chip-line: #e2e8f0;
+      --nav-bg: transparent;
+      --nav-border: transparent;
+      --nav-shadow: none;
+      --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --card-shadow-hi: 0 10px 24px -14px rgba(15, 23, 42, 0.18);
+      --btn-ink: #ffffff;
+      --band: #0d1117;
+      --band-ink: #ffffff;
+      --band-soft: #94a3b8;
+      --sel: #d8efff;
+      --glass: rgba(255, 255, 255, 0.8);
+    }
+
+    html[data-theme="dark"] {
+      --bg: #050b14;
+      --bg2: #071323;
+      --surface: #0d1117;
+      --surface-2: #111827;
+      --ink: #ffffff;
+      --ink-soft: #94a3b8;
+      --ink-mute: #64748b;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-soft: rgba(255, 255, 255, 0.06);
+      --chip: #0d1117;
+      --chip-line: rgba(255, 255, 255, 0.1);
+      --card-shadow: 0 2px 8px rgba(15, 23, 42, 0.24);
+      --card-shadow-hi: 0 10px 24px -16px rgba(2, 6, 23, 0.5);
+      --band: #0d1117;
+      --band-ink: #ffffff;
+      --band-soft: #94a3b8;
+      --sel: #082a5c;
+      --glass: rgba(9, 9, 11, 0.8);
+      --brand-tint: #10233d;
+      --brand-soft: rgba(96, 165, 250, 0.12);
+      --success-tint: rgba(22, 163, 74, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); color-scheme: light; }
+    html[data-theme="dark"] { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, p { margin: 0; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { color: var(--brand-hover); }
+    img { max-width: 100%; }
+    button, summary { font-family: inherit; }
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    ::selection { background: var(--sel); color: #003B73; }
+    html[data-theme="dark"] ::selection { color: #dbeafe; }
+    :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 8px; }
+    html[data-lang="en"] [data-l="bm"] { display: none !important; }
+    html:not([data-lang="en"]) [data-l="en"] { display: none !important; }
+
+    .page {
+      isolation: isolate;
+      overflow-x: clip;
+      min-height: 100vh;
+      background-color: #f2fbff;
+      background-image:
+        radial-gradient(ellipse 110% 55% at 50% -8%, rgba(0, 114, 188, 0.13) 0%, transparent 54%),
+        radial-gradient(ellipse 50% 40% at 92% 30%, rgba(124, 58, 237, 0.07) 0%, transparent 52%),
+        radial-gradient(ellipse 44% 38% at 8% 72%, rgba(14, 165, 233, 0.08) 0%, transparent 52%),
+        linear-gradient(180deg, #f2fbff 0%, #fbfbff 48%, #f6fbff 100%);
+    }
+    html[data-theme="dark"] .page {
+      background-color: #050b14;
+      background-image:
+        radial-gradient(ellipse 110% 55% at 50% -8%, rgba(0, 114, 188, 0.24) 0%, transparent 54%),
+        radial-gradient(ellipse 52% 42% at 92% 28%, rgba(45, 212, 191, 0.08) 0%, transparent 52%),
+        linear-gradient(180deg, #050b14 0%, #071323 48%, #050b14 100%);
+    }
+
+    .wrap { width: min(1160px, calc(100% - 2rem)); margin: 0 auto; }
+    @media (min-width: 640px) { .wrap { width: min(1160px, calc(100% - 3rem)); } }
+    @media (min-width: 1024px) { .wrap { width: min(1160px, calc(100% - 4rem)); } }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 1rem;
+    }
+    .skip:focus {
+      left: 1rem;
+      z-index: 100;
+      background: var(--brand);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 1rem;
+      font-weight: 600;
+    }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.is-scrolled {
+      background: var(--glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(226, 232, 240, 0.7);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      padding: 0.85rem 0;
+    }
+    html[data-theme="dark"] .nav.is-scrolled {
+      border-bottom-color: rgba(39, 39, 42, 0.8);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      min-height: 44px;
+    }
+    .logo { display: inline-flex; align-items: center; }
+    .logo img { height: 24px; width: auto; display: block; }
+    @media (min-width: 640px) { .logo img { height: 32px; } }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.75rem;
+    }
+    .nav-links a {
+      position: relative;
+      color: var(--ink-soft);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.25rem 0.15rem;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0.15rem;
+      bottom: -0.15rem;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--brand);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-actions { display: flex; align-items: center; gap: 0.35rem; }
+    .lang { position: relative; }
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      height: 40px;
+      border: 0;
+      border-radius: 0.375rem;
+      background: transparent;
+      padding: 0 0.5rem;
+      color: #334155;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .lang-btn:hover { background: #f1f5f9; }
+    html[data-theme="dark"] .lang-btn { color: #e2e8f0; }
+    html[data-theme="dark"] .lang-btn:hover { background: rgba(255, 255, 255, 0.1); }
+    .lang-flag {
+      display: inline-flex;
+      width: 1.25rem;
+      height: 1.25rem;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #f1f5f9;
+      box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.8);
+    }
+    html[data-theme="dark"] .lang-flag {
+      background: #1e293b;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+    .lang-flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lang-code {
+      display: inline-block;
+      min-width: 1.35rem;
+      color: #334155;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      text-align: left;
+    }
+    html[data-theme="dark"] .lang-code { color: #e2e8f0; }
+    .lang-chevron {
+      width: 0.875rem;
+      height: 0.875rem;
+      color: #94a3b8;
+      transition: transform 0.18s ease;
+    }
+    .lang.is-open .lang-chevron { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 0.4rem);
+      right: 0;
+      z-index: 20;
+      min-width: 9.5rem;
+      margin: 0;
+      padding: 0.25rem;
+      list-style: none;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      background: #fff;
+      box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
+    }
+    html[data-theme="dark"] .lang-menu {
+      border-color: rgba(255, 255, 255, 0.1);
+      background: #09090b;
+    }
+    .lang-menu[hidden] { display: none; }
+    .lang-menu button {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      width: 100%;
+      height: 40px;
+      border: 0;
+      border-radius: 0.75rem;
+      background: transparent;
+      padding: 0 0.65rem;
+      color: #334155;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+    }
+    .lang-menu button:hover { background: #f8fafc; }
+    html[data-theme="dark"] .lang-menu button { color: #e2e8f0; }
+    html[data-theme="dark"] .lang-menu button:hover { background: rgba(255, 255, 255, 0.06); }
+    html[data-lang="bm"] .lang-menu [data-set-lang="bm"],
+    html[data-lang="en"] .lang-menu [data-set-lang="en"] {
+      background: rgba(0, 114, 188, 0.1);
+      color: #0072bc;
+    }
+    html[data-theme="dark"][data-lang="bm"] .lang-menu [data-set-lang="bm"],
+    html[data-theme="dark"][data-lang="en"] .lang-menu [data-set-lang="en"] {
+      background: rgba(0, 114, 188, 0.2);
+      color: #bfdbfe;
+    }
+    .lang-check {
+      margin-left: auto;
+      width: 1rem;
+      height: 1rem;
+      color: currentColor;
+      opacity: 0;
+    }
+    html[data-lang="bm"] .lang-menu [data-set-lang="bm"] .lang-check,
+    html[data-lang="en"] .lang-menu [data-set-lang="en"] .lang-check { opacity: 1; }
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 0.375rem;
+      background: transparent;
+      color: #475569;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-btn:hover { background: #f1f5f9; color: #0f172a; }
+    html[data-theme="dark"] .icon-btn { color: #d1d5db; }
+    html[data-theme="dark"] .icon-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .icon-btn svg { width: 1rem; height: 1rem; display: block; }
+    html[data-theme="light"] .icon-sun { display: none; }
+    html[data-theme="dark"] .icon-moon { display: none; }
+    .menu-btn { display: inline-flex; }
+    .cta-nav { display: none; }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--line-soft);
+      background: var(--surface);
+      padding: 0.75rem 1rem 1rem;
+    }
+    .nav.is-open .mobile-nav { display: grid; gap: 0.35rem; }
+    .mobile-nav a, .mobile-nav .ghost {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.6rem 0.75rem;
+      border-radius: 0.75rem;
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+    .mobile-nav a:hover { background: var(--brand-tint); color: var(--brand); }
+
+    @media (min-width: 1024px) {
+      .nav-links { display: flex; }
+      .cta-nav { display: inline-flex; }
+      .menu-btn { display: none; }
+      .nav.is-open .mobile-nav { display: none; }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-primary:hover { background: var(--brand-hover); color: #fff; }
+    .btn-white { background: #fff; color: #0f172a; }
+    .btn-white:hover { background: #f1f5f9; color: #0f172a; }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+    .cta-nav {
+      min-height: 40px;
+      border-radius: 0.6rem;
+      padding: 0.5rem 1rem;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    .cta-nav:hover { background: var(--brand-hover); color: #fff; }
+
+    .hero { position: relative; padding: 8rem 0 4.5rem; }
+    @media (min-width: 640px) { .hero { padding: 9rem 0 5rem; } }
+    .hero-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    @media (min-width: 960px) {
+      .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      border: 1px solid rgba(0, 114, 188, 0.3);
+      background: var(--brand-soft);
+      color: var(--brand);
+      border-radius: 999px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 4px var(--success-tint);
+    }
+    .hero h1 {
+      margin: 1.1rem 0 1rem;
+      max-width: 16em;
+      font-size: clamp(2.15rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+      text-wrap: pretty;
+    }
+    @media (min-width: 960px) {
+      .hero h1 { max-width: 11em; }
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--brand);
+    }
+    .lead {
+      max-width: 36rem;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 1.6rem;
+      text-wrap: pretty;
+    }
+    .note { margin-top: 1rem; font-size: 0.8125rem; color: var(--ink-mute); max-width: 28rem; }
+
+    .frame {
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 1.25rem;
+      background: #efece7;
+      padding: 0.5rem;
+      box-shadow: 0 28px 70px -32px rgba(15, 23, 42, 0.55);
+    }
+    html[data-theme="dark"] .frame {
+      border-color: rgba(255, 255, 255, 0.1);
+      background: #2b2b2b;
+    }
+    .frame-bar {
+      display: flex;
+      align-items: center;
+      padding: 0.125rem 0.375rem 0.375rem;
+    }
+    .frame-dots { display: flex; align-items: center; gap: 0.375rem; width: 3rem; flex-shrink: 0; }
+    .frame-dots span { width: 0.625rem; height: 0.625rem; border-radius: 999px; }
+    .frame-url {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.75rem;
+      width: 100%;
+      max-width: 17rem;
+      margin: 0 auto;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+      color: #64748b;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    html[data-theme="dark"] .frame-url {
+      background: #1f1f1f;
+      color: #a1a1aa;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    .frame-spacer { width: 3rem; flex-shrink: 0; }
+    .chat-card {
+      overflow: hidden;
+      border-radius: 0.9rem;
+      background: #fff;
+    }
+    html[data-theme="dark"] .chat-card { background: #080808; }
+    .chat-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid #e8eef5;
+      background: #fff;
+    }
+    html[data-theme="dark"] .chat-head {
+      background: #09090b;
+      border-bottom-color: #27272a;
+    }
+    .avatar {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 999px;
+      background: #0072bc;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .chat-name { font-size: 0.875rem; font-weight: 600; color: #0f172a; line-height: 1.2; }
+    html[data-theme="dark"] .chat-name { color: #f8fafc; }
+    .chat-meta { margin-top: 0.15rem; font-size: 0.75rem; color: #64748b; }
+    .chat-time { margin-left: auto; font-size: 0.75rem; color: #94a3b8; white-space: nowrap; }
+    .chat-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      min-height: 15.5rem;
+      padding: 1rem 1.05rem 1.1rem;
+      background: #eaf3ff;
+    }
+    html[data-theme="dark"] .chat-body { background: #080808; }
+    .bubble {
+      max-width: 88%;
+      border-radius: 1.05rem;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.8125rem;
+      line-height: 1.45;
+      text-wrap: pretty;
+    }
+    .bubble.in {
+      align-self: flex-start;
+      background: #fff;
+      color: #334155;
+      border-bottom-left-radius: 0.3rem;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+    }
+    html[data-theme="dark"] .bubble.in {
+      background: #1f2937;
+      color: #e2e8f0;
+    }
+    .bubble.out {
+      align-self: flex-end;
+      background: #0072bc;
+      color: #fff;
+      border-bottom-right-radius: 0.3rem;
+    }
+    .chat-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      align-self: center;
+      margin-top: 0.25rem;
+      border-radius: 999px;
+      background: #fff;
+      color: #15803d;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+    }
+    html[data-theme="dark"] .chat-note {
+      background: #18181b;
+      color: #86efac;
+    }
+
+    .strip {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(255, 255, 255, 0.55);
+    }
+    html[data-theme="dark"] .strip { background: rgba(15, 23, 42, 0.45); }
+    .strip-inner {
+      display: grid;
+      gap: 1rem;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .strip-inner { grid-template-columns: auto 1fr; gap: 2rem; }
+    }
+    .checks { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+    .check {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+    .tick {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      border-radius: 50%;
+      background: var(--success-tint);
+      color: var(--success-ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .section { padding: 4rem 0; }
+    @media (min-width: 768px) { .section { padding: 5.5rem 0; } }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--brand);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .kicker i {
+      width: 18px;
+      height: 2px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+    .section h2 {
+      max-width: 18em;
+      font-size: clamp(1.7rem, 3.4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 0.9rem;
+      text-wrap: pretty;
+    }
+    .section > .wrap > .lead,
+    .section .intro {
+      max-width: 46rem;
+      color: var(--ink-soft);
+      font-size: clamp(0.97rem, 1.2vw, 1.1rem);
+      margin-bottom: 2rem;
+      text-wrap: pretty;
+    }
+
+    .explain {
+      display: grid;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+    @media (min-width: 860px) {
+      .explain { grid-template-columns: 0.92fr 1.08fr; }
+    }
+    .thread {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+    .thread-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid var(--line-soft);
+      background: var(--surface-2);
+    }
+    .thread-head b { font-size: 0.875rem; font-weight: 600; }
+    .thread-head span { color: var(--ink-mute); font-size: 0.75rem; font-weight: 500; }
+    .thread-body { display: grid; gap: 0.75rem; padding: 1.1rem; background: #eaf3ff; flex: 1; align-content: start; }
+    html[data-theme="dark"] .thread-body { background: #080808; }
+    .thread-row { display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-start; }
+    .thread-row.out { align-items: flex-end; text-align: right; }
+    .thread-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .explain h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.65rem;
+      text-wrap: pretty;
+    }
+    .metric-row {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    @media (min-width: 520px) { .metric-row { grid-template-columns: 1fr 1fr; } }
+    .metric {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 1.15rem;
+      padding: 1rem 1.05rem;
+    }
+    .metric b {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+    .metric span { color: var(--ink-soft); font-size: 0.8125rem; }
+
+    .split-callout {
+      display: grid;
+      gap: 0;
+      margin-top: 1.4rem;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+    @media (min-width: 800px) {
+      .split-callout { grid-template-columns: 1.15fr 0.85fr; }
+    }
+    .split-main, .split-aside { padding: 1.4rem 1.35rem; }
+    .split-main h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0.35rem 0 0.65rem;
+    }
+    .split-aside {
+      background: var(--surface-2);
+      border-top: 1px solid var(--line);
+    }
+    @media (min-width: 800px) {
+      .split-aside { border-top: 0; border-left: 1px solid var(--line); }
+    }
+    .split-aside strong { display: block; margin-bottom: 0.45rem; font-size: 0.95rem; }
+
+    .points {
+      display: grid;
+      gap: 0.85rem;
+    }
+    @media (min-width: 800px) { .points { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .point {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      padding: 1.25rem 1.2rem;
+      box-shadow: var(--card-shadow);
+    }
+    .point strong { display: block; font-size: 1rem; margin-bottom: 0.4rem; }
+
+    .flow {
+      display: grid;
+      gap: 0.85rem;
+    }
+    @media (min-width: 900px) {
+      .flow {
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        align-items: stretch;
+      }
+    }
+    .flow-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      padding: 1.25rem 1.2rem;
+      box-shadow: var(--card-shadow);
+    }
+    .flow-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0 0.45rem;
+    }
+    .flow-card p { color: var(--ink-soft); font-size: 0.875rem; }
+    .flow-arrow {
+      display: none;
+      align-items: center;
+      color: var(--brand);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    @media (min-width: 900px) { .flow-arrow { display: flex; } }
+    .grid-3 {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) { .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .card,
+    .point,
+    .flow-card,
+    .metric,
+    .dash,
+    .split-callout,
+    .faq details {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--card-shadow);
+    }
+    html[data-theme="dark"] .card,
+    html[data-theme="dark"] .point,
+    html[data-theme="dark"] .flow-card,
+    html[data-theme="dark"] .metric,
+    html[data-theme="dark"] .split-callout,
+    html[data-theme="dark"] .faq details,
+    html[data-theme="dark"] .thread {
+      background: #0d1117;
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.24);
+    }
+    .card {
+      border-radius: 1.25rem;
+      padding: 1.4rem 1.35rem;
+    }
+    .card:hover { box-shadow: var(--card-shadow-hi); }
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+      text-wrap: pretty;
+    }
+    .card p, .muted { color: var(--ink-soft); font-size: 0.9375rem; text-wrap: pretty; }
+    .stack { display: grid; gap: 1rem; }
+    .rule {
+      margin: 1.25rem 0 0;
+      padding: 1rem 1.15rem 1rem 1.2rem;
+      border: 0;
+      border-left: 4px solid var(--brand);
+      border-radius: 0 0.85rem 0.85rem 0;
+      background: #f3f9fe;
+      color: #315471;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+    .rule b { color: var(--ink); font-weight: 600; }
+    html[data-theme="dark"] .rule {
+      background: rgba(0, 114, 188, 0.12);
+      color: #cbd5e1;
+    }
+    html[data-theme="dark"] .rule b { color: #fff; }
+
+    .price-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+    @media (min-width: 860px) { .price-grid { grid-template-columns: 0.95fr 1.05fr; } }
+    .price-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--brand);
+      color: #fff;
+      border-radius: 1.5rem;
+      padding: 1.7rem 1.5rem;
+      box-shadow: 0 16px 30px -14px rgba(0, 114, 188, 0.55);
+    }
+    .price-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 66%);
+    }
+    .price-card > * { position: relative; }
+    .pill {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .price {
+      display: block;
+      margin: 0.7rem 0 0.8rem;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+    .example {
+      background: var(--brand-tint);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: 1.2rem;
+    }
+    .example strong {
+      display: block;
+      font-size: clamp(1.25rem, 2vw, 1.7rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .icon-tile {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.9rem;
+      background: var(--brand-tint);
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .num {
+      flex: 0 0 36px;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .ads-wrap {
+      display: grid;
+      gap: 1.75rem;
+      align-items: stretch;
+    }
+    @media (min-width: 900px) {
+      .ads-wrap { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    .ads-visual,
+    .ads-copy {
+      min-height: 100%;
+    }
+    .ads-visual {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      background: var(--surface);
+      box-shadow: var(--card-shadow);
+    }
+    .ads-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .ads-copy h2 { max-width: none; }
+    html[data-theme="dark"] .ads-visual {
+      background: #0d1117;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .fep-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 1.5rem 1.5rem 1.15rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .fep-head strong {
+      display: flex;
+      align-items: baseline;
+      gap: 0.15rem;
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      color: var(--brand);
+    }
+    .fep-head strong em {
+      font-style: normal;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    .fep-head span {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .fep-meter { padding: 1.75rem 1.5rem 0; }
+    .fep-track {
+      position: relative;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: var(--brand-tint);
+    }
+    .fep-fill {
+      position: absolute;
+      inset: 0 66.7% 0 0;
+      border-radius: 999px;
+      background: var(--brand);
+    }
+    .fep-dot {
+      position: absolute;
+      top: 50%;
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-top: -0.4rem;
+      border-radius: 999px;
+      background: var(--surface);
+      box-shadow: 0 0 0 3px var(--brand);
+    }
+    html[data-theme="dark"] .fep-dot { background: #0d1117; }
+    .fep-dot.start { left: 0; }
+    .fep-dot.mid { left: 33.3%; margin-left: -0.4rem; }
+    .fep-dot.end { right: 0; box-shadow: 0 0 0 3px var(--ink-mute); }
+    .fep-scale {
+      position: relative;
+      height: 1.35rem;
+      margin-top: 0.55rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--ink-mute);
+    }
+    .fep-scale span { position: absolute; top: 0; white-space: nowrap; }
+    .fep-scale .s0 { left: 0; }
+    .fep-scale .s24 { left: 33.3%; transform: translateX(-50%); }
+    .fep-scale .s72 { right: 0; }
+    .fep-notes {
+      display: grid;
+      gap: 0.75rem;
+      flex: 1;
+      align-content: start;
+      padding: 1.15rem 1.5rem 1.5rem;
+    }
+    .fep-note {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+    .fep-note i {
+      flex: 0 0 0.5rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-top: 0.42rem;
+      border-radius: 999px;
+      background: var(--brand);
+    }
+    .fep-note.muted i { background: var(--ink-mute); }
+    .fep-note b { color: var(--ink); font-weight: 600; }
+    .ads-wrap .intro { margin-bottom: 0; }
+    .ads-list { display: grid; gap: 0.85rem; margin-top: 1.4rem; }
+    .ads-list div {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .ads-list b {
+      flex: 0 0 1.75rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.55rem;
+      background: var(--brand-tint);
+      color: var(--brand);
+      font-size: 0.8rem;
+    }
+    .ads-list span { color: var(--ink-soft); font-size: 0.9375rem; }
+
+    .check-panel {
+      display: grid;
+      gap: 1.75rem;
+      padding: clamp(1.4rem, 4vw, 2.75rem);
+      border-radius: 1.75rem;
+      background: #0d1117;
+      color: #fff;
+    }
+    @media (min-width: 800px) {
+      .check-panel { grid-template-columns: 0.85fr 1.15fr; gap: 2.75rem; align-items: center; }
+    }
+    .check-panel h2 {
+      max-width: none;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .check-panel p { color: #94a3b8; margin: 0; }
+    .review-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+    @media (min-width: 560px) { .review-list { grid-template-columns: 1fr 1fr; } }
+    .review-item {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      min-height: 3.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.9rem;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.85rem 0.9rem;
+      color: #d6e4ef;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .review-item .tick {
+      background: rgba(0, 114, 188, 0.22);
+      color: #7dd3fc;
+    }
+
+    .faq { display: grid; gap: 0.75rem; width: 100%; }
+    .faq details {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: 0.2rem 1.25rem;
+      box-shadow: var(--card-shadow);
+    }
+    .faq summary {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding: 1.05rem 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      min-height: 44px;
+    }
+    .faq summary > span:first-child {
+      min-width: 0;
+      flex: 1;
+    }
+    .faq details[open] summary { color: var(--brand); }
+    .mark {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-tint);
+      color: var(--brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .mark::before { content: "+"; }
+    details[open] .mark::before { content: "–"; }
+    .faq details p { padding: 0 0 1.15rem; color: var(--ink-soft); }
+
+    .cta-block { padding: 1.5rem 0 4rem; }
+    .cta-inner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: #0d1117;
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1.25rem;
+      box-shadow: 0 25px 50px -20px rgba(15, 23, 42, 0.35);
+    }
+    .cta-inner h2 {
+      max-width: 18ch;
+      margin: 0 auto 0.9rem;
+      font-size: clamp(1.7rem, 4vw, 3.2rem);
+      color: #fff;
+    }
+    .cta-inner p {
+      max-width: 36rem;
+      margin: 0 auto 1.5rem;
+      color: #94a3b8;
+    }
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line-soft);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    }
+    .footer h4 {
+      margin: 0 0 1.1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .footer ul { margin: 0; padding: 0; list-style: none; }
+    .footer li { margin-bottom: 0.85rem; }
+    .footer a, .footer p { color: var(--ink-mute); font-size: 0.875rem; font-weight: 500; }
+    .footer a:hover { color: var(--brand); }
+    .legal {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line-soft);
+      color: var(--ink-mute);
+      font-size: 0.8rem;
+    }
+    @media (min-width: 768px) {
+      .legal { flex-direction: row; justify-content: space-between; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a class="skip" href="#atas">Skip to content</a>
+
+    <header class="nav" id="nav">
+      <div class="wrap nav-inner">
+        <a class="logo" href="https://wabot.io/" aria-label="Wabot">
+          <img src="https://wabot.io/assets/WABOT-PNG-02.png" alt="Wabot">
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#perubahan"><span data-l="bm">Perubahan caj</span><span data-l="en">Pricing changes</span></a>
+          <a href="#faq"><span data-l="bm">Soalan lazim</span><span data-l="en">FAQ</span></a>
+        </nav>
+        <div class="nav-actions">
+          <div class="lang" id="langSwitch">
+            <button type="button" class="lang-btn" id="langBtn" aria-expanded="false" aria-haspopup="listbox" aria-label="Language, Bahasa Melayu">
+              <span class="lang-flag"><img id="langFlag" src="https://wabot.io/flags/my.svg" alt=""></span>
+              <span class="lang-code" id="langCode">BM</span>
+              <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ul class="lang-menu" id="langMenu" hidden role="listbox" aria-label="Choose language">
+              <li>
+                <button type="button" data-set-lang="bm" aria-label="Switch to Bahasa Melayu">
+                  <span class="lang-flag"><img src="https://wabot.io/flags/my.svg" alt=""></span>
+                  <span>BM</span>
+                  <svg class="lang-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-set-lang="en" aria-label="Switch to English">
+                  <span class="lang-flag"><img src="https://wabot.io/flags/gb.svg" alt=""></span>
+                  <span>EN</span>
+                  <svg class="lang-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <button type="button" class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </button>
+          <a class="cta-nav" href="#faq"><span data-l="bm">Dapatkan bantuan</span><span data-l="en">Get help</span></a>
+          <button type="button" class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-nav wrap">
+        <a href="#perubahan"><span data-l="bm">Perubahan caj</span><span data-l="en">Pricing changes</span></a>
+        <a href="#faq"><span data-l="bm">Soalan lazim</span><span data-l="en">FAQ</span></a>
+        <a href="#faq"><span data-l="bm">Dapatkan bantuan</span><span data-l="en">Get help</span></a>
+      </div>
+    </header>
+
+    <main id="atas">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow"><span class="dot"></span><span data-l="bm">Kemas kini WhatsApp Business Platform</span><span data-l="en">WhatsApp Business Platform update</span></div>
+            <h1 data-l="bm">Fahami perubahan <em>caj Meta</em> sebelum 1 Oktober.</h1>
+            <h1 data-l="en">Understand the <em>Meta charges</em> before 1 October.</h1>
+            <p class="lead" data-l="bm">Panduan ringkas untuk pengguna WhatsApp Official API yang menggunakan chatbot, team reply, automasi atau notifikasi customer.</p>
+            <p class="lead" data-l="en">A short guide for WhatsApp Official API users running chatbots, team replies, automation or customer notifications.</p>
+            <a class="btn btn-primary" href="#perubahan"><span data-l="bm">Fahami perubahan caj Meta</span><span data-l="en">Understand the Meta charges</span> →</a>
+            <p class="note" data-l="bm">Perubahan ini melibatkan caj Meta. Ia bukan perubahan yuran langganan Wabot.</p>
+            <p class="note" data-l="en">This change involves Meta charges. It is not a change to your Wabot subscription fee.</p>
+          </div>
+          <div>
+            <div class="frame">
+              <div class="frame-bar">
+                <div class="frame-dots" aria-hidden="true">
+                  <span style="background:#ff5f57"></span>
+                  <span style="background:#febc2e"></span>
+                  <span style="background:#28c840"></span>
+                </div>
+                <div class="frame-url">app.wabot.io/live-chat</div>
+                <div class="frame-spacer" aria-hidden="true"></div>
+              </div>
+              <div class="chat-card" aria-label="Wabot live chat">
+                <div class="chat-head">
+                  <span class="avatar">SA</span>
+                  <div>
+                    <div class="chat-name">Sarah Ali</div>
+                    <div class="chat-meta">+60 19-874 0000</div>
+                  </div>
+                  <div class="chat-time">12:16 PM</div>
+                </div>
+                <div class="chat-body">
+                  <div class="bubble in"><span data-l="bm">Hi, ada class minggu ni ke?</span><span data-l="en">Hi, do you have any classes this week?</span></div>
+                  <div class="bubble out"><span data-l="bm">Ada, Sarah. Esok 7:00 PM ada 4 seat lagi. Nak saya tahan satu?</span><span data-l="en">Hi Sarah! Yes — tomorrow 7:00 PM, 4 seats left. Want me to hold one?</span></div>
+                  <div class="bubble in"><span data-l="bm">Yes please, book esok 7 malam.</span><span data-l="en">Yes please — book tomorrow evening.</span></div>
+                  <div class="chat-note"><span class="tick">✓</span><span data-l="bm">Reply team/AI ni Service Message</span><span data-l="en">This team/AI reply is a Service Message</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="strip">
+        <div class="wrap strip-inner">
+          <div style="font-weight:700;letter-spacing:-.02em"><span data-l="bm">Panduan ini membantu anda faham:</span><span data-l="en">This guide helps you understand:</span></div>
+          <div class="checks">
+            <div class="check"><span class="tick">✓</span><span data-l="bm">Apa yang Meta caj</span><span data-l="en">What Meta charges for</span></div>
+            <div class="check"><span class="tick">✓</span><span data-l="bm">Anggaran kos dalam RM</span><span data-l="en">Estimated cost in RM</span></div>
+            <div class="check"><span class="tick">✓</span><span data-l="bm">Siapa yang mungkin terkesan</span><span data-l="en">Who may be affected</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <p class="kicker"><i></i><span data-l="bm">Perubahan baharu yang perlu difahami</span><span data-l="en">The new change you need to understand</span></p>
+          <h2 data-l="bm">Apa itu Service Message?</h2>
+          <h2 data-l="en">What is a Service Message?</h2>
+          <p class="intro" data-l="bm">Mulai 1 Oktober, Meta mengenakan caj bagi <b>Service Message</b> — iaitu mesej balasan biasa yang dihantar oleh bisnes kepada customer. Ini ialah perubahan utama yang perlu diberi perhatian pengguna Wabot.</p>
+          <p class="intro" data-l="en">From 1 October, Meta charges for <b>Service Messages</b> — the ordinary reply messages a business sends to a customer. This is the main change Wabot users need to pay attention to.</p>
+          <div class="explain">
+            <div class="thread" aria-label="Contoh Service Message">
+              <div class="thread-head">
+                <b>Team Inbox</b>
+                <span data-l="bm">Contoh perbualan</span>
+                <span data-l="en">Example conversation</span>
+              </div>
+              <div class="thread-body">
+                <div class="thread-row">
+                  <span class="thread-label" data-l="bm">Customer · tidak dicaj</span>
+                  <span class="thread-label" data-l="en">Customer · not charged</span>
+                  <div class="bubble in"><span data-l="bm">Hi, ada class minggu ni ke?</span><span data-l="en">Hi, do you have any classes this week?</span></div>
+                </div>
+                <div class="thread-row out">
+                  <span class="thread-label" data-l="bm">Bisnes · Service Message</span>
+                  <span class="thread-label" data-l="en">Business · Service Message</span>
+                  <div class="bubble out"><span data-l="bm">Ada, Sarah. Esok 7:00 PM, 4 seat lagi. Nak saya tahan satu?</span><span data-l="en">Hi Sarah! Yes — tomorrow 7:00 PM, 4 seats left. Want me to hold one?</span></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 data-l="bm">Service Message ialah reply daripada flow chatbot, AI, bot atau ejen.</h3>
+              <h3 data-l="en">A Service Message is a reply from a chatbot flow, AI, bot or agent.</h3>
+              <p class="muted" data-l="bm">Contohnya: customer hantar keyword, flow membalas maklumat; AI menjawab pertanyaan; atau team membalas melalui Team Inbox. Setiap mesej balasan ini ialah Service Message.</p>
+              <p class="muted" data-l="en">For example: a customer sends a keyword and the flow replies with information; AI answers a question; or your team replies through Team Inbox. Every one of these reply messages is a Service Message.</p>
+              <div class="metric-row">
+                <div class="metric">
+                  <b>1,000</b>
+                  <span data-l="bm">mesej percuma setiap bulan bagi setiap nombor</span>
+                  <span data-l="en">free messages every month for each number</span>
+                </div>
+                <div class="metric">
+                  <b data-l="bm">Selepas itu</b>
+                  <b data-l="en">After that</b>
+                  <span data-l="bm">Service Message seterusnya boleh dikenakan caj Meta mengikut kadar rujukan Malaysia.</span>
+                  <span data-l="en">Further Service Messages may be charged by Meta at the Malaysia reference rate.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="rule">
+            <span data-l="bm"><b>Yang tidak berubah:</b> mesej daripada customer kepada bisnes tidak dikenakan caj Meta. Template Utility dan Marketing kekal mengikut kategori caj sedia ada.</span>
+            <span data-l="en"><b>What does not change:</b> messages from a customer to a business are not charged by Meta. Utility and Marketing templates remain under their existing charge categories.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="perubahan">
+        <div class="wrap">
+          <p class="kicker"><i></i><span data-l="bm">Kadar rujukan Malaysia</span><span data-l="en">Malaysia reference rate</span></p>
+          <h2 data-l="bm">Anggaran caj Service Message</h2>
+          <h2 data-l="en">Estimated Service Message charge</h2>
+          <p class="intro" data-l="bm">Anggaran di bawah ialah kadar rujukan untuk mesej yang dihantar kepada nombor Malaysia. Kadar sebenar bergantung pada kategori mesej, negara penerima, billing currency WABA, cukai dan caj penyedia jika ada.</p>
+          <p class="intro" data-l="en">The estimate below is the reference rate for messages sent to Malaysian numbers. The actual rate depends on the message category, the recipient's country, the WABA billing currency, taxes and provider charges if any.</p>
+          <div class="price-grid">
+            <article class="price-card">
+              <span class="pill" data-l="bm">Selepas 1,000 mesej percuma / nombor / bulan</span>
+              <span class="pill" data-l="en">After 1,000 free messages / number / month</span>
+              <h3 style="margin:1rem 0 .35rem;font-size:1.35rem">Service Message</h3>
+              <strong class="price">RM0.0564</strong>
+              <p data-l="bm">Anggaran bagi setiap Service Message yang berjaya dihantar selepas allowance bulanan digunakan.</p>
+              <p data-l="en">Estimate for each Service Message successfully delivered after the monthly allowance is used.</p>
+            </article>
+            <article class="card">
+              <p class="kicker" style="color:var(--success-ink)"><i style="background:var(--success)"></i><span data-l="bm">Contoh mudah</span><span data-l="en">A simple example</span></p>
+              <h3 data-l="bm">Jika satu nombor menghantar 10,000 service messages dalam sebulan</h3>
+              <h3 data-l="en">If one number sends 10,000 service messages in a month</h3>
+              <p class="muted" data-l="bm">1,000 mesej pertama ialah allowance percuma. Baki 9,000 mesej menjadi chargeable.</p>
+              <p class="muted" data-l="en">The first 1,000 messages are the free allowance. The remaining 9,000 messages become chargeable.</p>
+              <div class="example" style="margin-top:1rem">
+                <span style="font-size:.85rem;font-weight:700;color:var(--brand)">9,000 × RM0.0564</span>
+                <strong data-l="bm">Anggaran RM507.60</strong>
+                <strong data-l="en">Estimated RM507.60</strong>
+                <small class="muted" data-l="bm">Untuk caj Meta service messages sahaja</small>
+                <small class="muted" data-l="en">For Meta service message charges only</small>
+              </div>
+            </article>
+          </div>
+          <p class="note" style="max-width:54rem;margin-top:1.25rem" data-l="bm">Nota: Ini ialah anggaran rujukan, bukan invois akhir. Ia tidak termasuk subscription Wabot, penggunaan AI/AI credits, cukai, caj kad atau markup provider jika berkenaan.</p>
+          <p class="note" style="max-width:54rem;margin-top:1.25rem" data-l="en">Note: This is a reference estimate, not a final invoice. It excludes your Wabot subscription, AI/AI credit usage, taxes, card charges or provider markup where applicable.</p>
+          <div class="split-callout">
+            <div class="split-main">
+              <p class="kicker"><i></i><span data-l="bm">Pengecualian penting untuk lead daripada Meta Ads</span><span data-l="en">Important exception for leads from Meta Ads</span></p>
+              <h3 data-l="bm">72-hour Free Entry Point tidak dikenakan caj Meta</h3>
+              <h3 data-l="en">The 72-hour Free Entry Point is not charged by Meta</h3>
+              <p class="muted" data-l="bm">Jika lead masuk melalui Click-to-WhatsApp Ad atau Facebook Page CTA yang layak, dan bisnes membalas dalam tempoh yang melayakkan Free Entry Point, respons AI, bot atau ejen dalam tetingkap 72 jam ini tidak dikenakan caj Meta.</p>
+              <p class="muted" data-l="en">If a lead comes in through a qualifying Click-to-WhatsApp Ad or Facebook Page CTA, and the business replies within the window that qualifies for the Free Entry Point, AI, bot or agent responses inside this 72-hour window are not charged by Meta.</p>
+            </div>
+            <div class="split-aside">
+              <strong data-l="bm">Jika lead senyap lebih 24 jam</strong>
+              <strong data-l="en">If the lead goes quiet for more than 24 hours</strong>
+              <p class="muted" data-l="bm">Free-form AI/bot reply tidak lagi dibenarkan. Follow-up perlu dihantar menggunakan approved template walaupun tempoh 72 jam masih aktif.</p>
+              <p class="muted" data-l="en">Free-form AI/bot replies are no longer allowed. Follow-ups must be sent using an approved template even while the 72-hour window is still active.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <p class="kicker"><i></i><span data-l="bm">Kemudian, fahami situasinya</span><span data-l="en">Next, understand the situation</span></p>
+          <h2 data-l="bm">Bukan semua mesej atau reply akan dicaj.</h2>
+          <h2 data-l="en">Not every message or reply will be charged.</h2>
+          <p class="intro" data-l="bm">Kesan caj bergantung pada jenis mesej, cara bisnes menggunakan WhatsApp Official API dan keadaan perbualan dengan customer.</p>
+          <p class="intro" data-l="en">The impact depends on the message type, how the business uses the WhatsApp Official API and the state of the conversation with the customer.</p>
+          <div class="points">
+            <article class="point">
+              <strong data-l="bm">Corak outbound perlu lebih jelas</strong>
+              <strong data-l="en">Outbound patterns need to be clearer</strong>
+              <p class="muted" data-l="bm">Mulai 1 Oktober, fahami balasan AI chatbot, team reply, automasi follow-up dan template notifikasi.</p>
+              <p class="muted" data-l="en">From 1 October, understand AI chatbot replies, team replies, follow-up automation and notification templates.</p>
+            </article>
+            <article class="point">
+              <strong data-l="bm">Mesej customer masuk kekal tidak dicaj</strong>
+              <strong data-l="en">Incoming customer messages remain uncharged</strong>
+              <p class="muted" data-l="bm">Customer yang menghantar mesej kepada bisnes tidak dikenakan caj Meta.</p>
+              <p class="muted" data-l="en">Customers who send messages to a business are not charged by Meta.</p>
+            </article>
+            <article class="point">
+              <strong data-l="bm">Yuran Wabot dan caj Meta berasingan</strong>
+              <strong data-l="en">Wabot fees and Meta charges are separate</strong>
+              <p class="muted" data-l="bm">Sentiasa bezakan subscription Wabot, penggunaan AI dan caj Meta.</p>
+              <p class="muted" data-l="en">Always separate your Wabot subscription, AI usage and Meta charges.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <p class="kicker"><i></i><span data-l="bm">Semak penggunaan anda</span><span data-l="en">Review your usage</span></p>
+          <h2 data-l="bm">Siapa yang perlu ambil perhatian?</h2>
+          <h2 data-l="en">Who should pay attention?</h2>
+          <p class="intro" data-l="bm">Jika anda menggunakan WhatsApp Official API untuk perkara di bawah, perubahan caj Meta lebih relevan untuk diberi perhatian.</p>
+          <p class="intro" data-l="en">If you use the WhatsApp Official API for the items below, the Meta charging change is more relevant to you.</p>
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon-tile">⌘</div>
+              <h3 data-l="bm">Flow chatbot / keyword auto-reply</h3>
+              <h3 data-l="en">Chatbot flow / keyword auto-reply</h3>
+              <p data-l="bm">Apabila flow menghantar reply automatik kepada customer, ia dikira sebagai mesej outbound.</p>
+              <p data-l="en">When a flow sends an automatic reply to a customer, it counts as an outbound message.</p>
+            </article>
+            <article class="card">
+              <div class="icon-tile">✦</div>
+              <h3 data-l="bm">AI Reply atau bot reply</h3>
+              <h3 data-l="en">AI reply or bot reply</h3>
+              <p data-l="bm">Setiap balasan AI atau bot kepada customer perlu diberi perhatian sebagai mesej outbound.</p>
+              <p data-l="en">Every AI or bot reply to a customer should be treated as an outbound message.</p>
+            </article>
+            <article class="card">
+              <div class="icon-tile">◎</div>
+              <h3>AI customer service</h3>
+              <p data-l="bm">AI yang melayan pertanyaan dan menyambung chat dengan customer.</p>
+              <p data-l="en">AI that handles enquiries and continues the chat with customers.</p>
+            </article>
+            <article class="card">
+              <div class="icon-tile">▣</div>
+              <h3>Notification automation</h3>
+              <p data-l="bm">Notifikasi order, payment, appointment atau kemas kini customer menggunakan template.</p>
+              <p data-l="en">Order, payment, appointment or customer update notifications sent using templates.</p>
+            </article>
+            <article class="card">
+              <div class="icon-tile">▤</div>
+              <h3>Broadcast &amp; campaign</h3>
+              <p data-l="bm">Marketing broadcast dan mesej susulan campaign ialah kategori berbeza yang turut dicaj Meta.</p>
+              <p data-l="en">Marketing broadcasts and campaign follow-up messages are a different category that Meta also charges for.</p>
+            </article>
+            <article class="card">
+              <div class="icon-tile">↗</div>
+              <h3 data-l="bm">Lead kembali selepas FEP tamat</h3>
+              <h3 data-l="en">Lead returns after the FEP ends</h3>
+              <p data-l="bm">Apabila lead iklan mesej semula selepas 72 jam tamat, FEP asal tidak hidup semula.</p>
+              <p data-l="en">When an ad lead messages again after the 72 hours are up, the original FEP does not restart.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap ads-wrap">
+          <div class="ads-visual">
+            <div class="fep-head">
+              <strong>72<em>h</em></strong>
+              <span>Free Entry Point</span>
+            </div>
+            <div class="fep-meter">
+              <div class="fep-track" aria-hidden="true">
+                <span class="fep-fill"></span>
+                <span class="fep-dot start"></span>
+                <span class="fep-dot mid"></span>
+                <span class="fep-dot end"></span>
+              </div>
+              <div class="fep-scale" aria-hidden="true">
+                <span class="s0">0h</span>
+                <span class="s24">24h</span>
+                <span class="s72">72h</span>
+              </div>
+            </div>
+            <div class="fep-notes">
+              <div class="fep-note">
+                <i aria-hidden="true"></i>
+                <span data-l="bm"><b>Lead masuk</b> — bisnes balas, FEP terbuka</span>
+                <span data-l="en"><b>Lead comes in</b> — business replies, FEP opens</span>
+              </div>
+              <div class="fep-note">
+                <i aria-hidden="true"></i>
+                <span data-l="bm"><b>Senyap 24 jam</b> — follow-up perlu approved template</span>
+                <span data-l="en"><b>Quiet for 24h</b> — follow-ups need an approved template</span>
+              </div>
+              <div class="fep-note muted">
+                <i aria-hidden="true"></i>
+                <span data-l="bm"><b>72 jam tamat</b> — FEP tidak restart</span>
+                <span data-l="en"><b>72 hours up</b> — the FEP does not restart</span>
+              </div>
+            </div>
+          </div>
+          <div class="ads-copy">
+            <p class="kicker"><i></i><span data-l="bm">Untuk lead daripada Meta Ads</span><span data-l="en">For leads from Meta Ads</span></p>
+            <h2 data-l="bm">Ada perbezaan untuk Click-to-WhatsApp.</h2>
+            <h2 data-l="en">Click-to-WhatsApp works differently.</h2>
+            <p class="intro" data-l="bm">Jika customer masuk melalui Click-to-WhatsApp Ads atau Facebook Page CTA yang layak, mereka boleh berada dalam 72-hour Free Entry Point.</p>
+            <p class="intro" data-l="en">If a customer comes in through a qualifying Click-to-WhatsApp Ad or Facebook Page CTA, they can be inside the 72-hour Free Entry Point.</p>
+            <div class="ads-list">
+              <div><b>1</b><span data-l="bm">Bisnes perlu membalas dalam tempoh yang layak untuk membuka Free Entry Point.</span><span data-l="en">The business must reply within the qualifying window to open the Free Entry Point.</span></div>
+              <div><b>2</b><span data-l="bm">Semasa FEP aktif, mesej outbound yang layak boleh menerima pengecualian caj Meta.</span><span data-l="en">While the FEP is active, qualifying outbound messages can receive the Meta charge exemption.</span></div>
+              <div><b>3</b><span data-l="bm">Jika customer senyap lebih 24 jam, follow-up tetap perlu menggunakan approved template.</span><span data-l="en">If the customer goes quiet for more than 24 hours, follow-ups still need an approved template.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="check-panel">
+            <div>
+              <h2 data-l="bm">Sebelum 1 Oktober, semak penggunaan anda dahulu.</h2>
+              <h2 data-l="en">Before 1 October, review your usage first.</h2>
+              <p data-l="bm">Anda tidak perlu mengubah apa-apa secara tergesa-gesa. Mulakan dengan semakan ringkas ini.</p>
+              <p data-l="en">You do not need to change anything in a hurry. Start with this quick review.</p>
+            </div>
+            <div class="review-list">
+              <div class="review-item"><span class="tick">✓</span><span data-l="bm">Nombor anda ialah WhatsApp Official API</span><span data-l="en">Your number is on the WhatsApp Official API</span></div>
+              <div class="review-item"><span class="tick">✓</span><span data-l="bm">AI chatbot menghantar banyak balasan</span><span data-l="en">Your AI chatbot sends a lot of replies</span></div>
+              <div class="review-item"><span class="tick">✓</span><span data-l="bm">Team aktif membalas melalui Team Inbox</span><span data-l="en">Your team actively replies through Team Inbox</span></div>
+              <div class="review-item"><span class="tick">✓</span><span data-l="bm">Anda menjalankan automasi follow-up</span><span data-l="en">You run follow-up automation</span></div>
+              <div class="review-item"><span class="tick">✓</span><span data-l="bm">Anda menghantar template notifikasi</span><span data-l="en">You send notification templates</span></div>
+              <div class="review-item"><span class="tick">✓</span><span data-l="bm">Sebahagian lead datang daripada Meta Ads</span><span data-l="en">Some of your leads come from Meta Ads</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="wrap">
+          <p class="kicker"><i></i><span data-l="bm">Soalan lazim</span><span data-l="en">Frequently asked questions</span></p>
+          <h2 data-l="bm">Jawapan ringkas sebelum anda buat semakan lanjut.</h2>
+          <h2 data-l="en">Quick answers before you look into it further.</h2>
+          <div class="faq">
+            <details>
+              <summary><span data-l="bm">Adakah semua reply WhatsApp akan dikenakan caj mulai 1 Oktober?</span><span data-l="en">Will every WhatsApp reply be charged from 1 October?</span><span class="mark" aria-hidden="true"></span></summary>
+              <p data-l="bm">Tidak semestinya. Kesan caj bergantung pada jenis mesej, penggunaan WhatsApp Official API, keadaan perbualan dan sumber lead.</p>
+              <p data-l="en">Not necessarily. The impact depends on the message type, your WhatsApp Official API usage, the state of the conversation and the lead source.</p>
+            </details>
+            <details>
+              <summary><span data-l="bm">Adakah mesej daripada customer kepada bisnes dikenakan caj?</span><span data-l="en">Are messages from a customer to a business charged?</span><span class="mark" aria-hidden="true"></span></summary>
+              <p data-l="bm">Tidak. Mesej inbound daripada customer kekal tidak dikenakan caj Meta.</p>
+              <p data-l="en">No. Inbound messages from customers remain free of Meta charges.</p>
+            </details>
+            <details>
+              <summary><span data-l="bm">Adakah ini kenaikan harga subscription Wabot?</span><span data-l="en">Is this a Wabot subscription price increase?</span><span class="mark" aria-hidden="true"></span></summary>
+              <p data-l="bm">Tidak. Perubahan ini berkaitan caj Meta bagi WhatsApp Business Platform. Ia perlu dibezakan daripada yuran langganan Wabot, penggunaan AI dan caj pihak lain jika berkenaan.</p>
+              <p data-l="en">No. This change relates to Meta charges for the WhatsApp Business Platform. It should be separated from your Wabot subscription fee, AI usage and any third-party charges.</p>
+            </details>
+            <details>
+              <summary><span data-l="bm">Lead saya datang daripada Meta Ads. Adakah semua mesej percuma?</span><span data-l="en">My leads come from Meta Ads. Are all messages free?</span><span class="mark" aria-hidden="true"></span></summary>
+              <p data-l="bm">Lead Click-to-WhatsApp yang layak boleh berada dalam 72-hour Free Entry Point. Namun, selepas customer senyap lebih 24 jam, bisnes masih perlu menggunakan approved template untuk follow-up.</p>
+              <p data-l="en">Qualifying Click-to-WhatsApp leads can be inside the 72-hour Free Entry Point. However, once the customer has been quiet for more than 24 hours, the business still needs an approved template to follow up.</p>
+            </details>
+            <details>
+              <summary><span data-l="bm">Bolehkah saya dapatkan kadar caj yang tepat?</span><span data-l="en">Can I get the exact charge rate?</span><span class="mark" aria-hidden="true"></span></summary>
+              <p data-l="bm">Kadar boleh bergantung pada kategori mesej, negara nombor penerima, billing currency WhatsApp Business Account serta syarat Meta yang berkuat kuasa. Rujuk rate card Meta yang berkaitan untuk semakan terkini.</p>
+              <p data-l="en">Rates can depend on the message category, the recipient number's country, the WhatsApp Business Account billing currency and Meta's terms in force. Refer to the relevant Meta rate card for the latest figures.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-block">
+        <div class="wrap">
+          <div class="cta-inner">
+            <h2 data-l="bm">Fahami penggunaan anda dahulu.</h2>
+            <h2 data-l="en">Understand your usage first.</h2>
+            <p data-l="bm">Tujuan panduan ini ialah membantu anda memahami perubahan caj Meta dan penggunaan WhatsApp Official API dengan lebih jelas.</p>
+            <p data-l="en">The purpose of this guide is to help you understand the Meta charging change and your WhatsApp Official API usage more clearly.</p>
+            <div class="cta-actions">
+              <a class="btn btn-white" href="#atas"><span data-l="bm">Kembali ke atas</span><span data-l="en">Back to top</span> ↑</a>
+              <a class="btn btn-outline" href="https://wa.me/60125153307" target="_blank" rel="noopener"><span data-l="bm">Chat dengan kami</span><span data-l="en">Talk to Sales</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="logo" href="https://wabot.io/"><img src="https://wabot.io/assets/WABOT-PNG-02.png" alt="Wabot"></a>
+            <p style="margin-top:1rem;max-width:22rem">The all-in-one WhatsApp automation platform. Built by Team Fames Sdn Bhd (1359369-A).</p>
+            <p>No 1-2, Jalan Puteri 2A/8,</p>
+            <p>Bandar Puteri Bangi, 43000 Kajang, Selangor</p>
+          </div>
+          <div>
+            <h4>Product</h4>
+            <ul>
+              <li><a href="https://wabot.io/#features">Features</a></li>
+              <li><a href="https://wabot.io/#industries">Industries</a></li>
+              <li><a href="https://wabot.io/#apps">Mobile apps</a></li>
+              <li><a href="https://wabot.io/#pricing">Pricing</a></li>
+              <li><a href="https://wabot.io/updates">What's New</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <ul>
+              <li><a href="https://wa.me/60125153307">Contact Us</a></li>
+              <li><a href="#faq"><span data-l="bm">Soalan lazim</span><span data-l="en">Help Center &amp; FAQ</span></a></li>
+              <li><a href="https://developers.facebook.com/docs/whatsapp/pricing" target="_blank" rel="noopener"><span data-l="bm">Rujukan rasmi Meta</span><span data-l="en">Official Meta reference</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="https://wabot.io/privacy-policy">Privacy Policy</a></li>
+              <li><a href="https://wabot.io/terma">Terms of Service</a></li>
+              <li><a href="https://wabot.io/google-api-disclosure">Google API Disclosure</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">
+          <span data-l="bm">© 2026 Wabot. Panduan ini adalah untuk penerangan umum.</span>
+          <span data-l="en">© 2026 Wabot. This guide is for general information only.</span>
+          <span>WhatsApp and WhatsApp Logo are brand assets and trademark of WhatsApp Inc.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var nav = document.getElementById('nav');
+      var themeBtn = document.getElementById('themeBtn');
+      var menuBtn = document.getElementById('menuBtn');
+      var langSwitch = document.getElementById('langSwitch');
+      var langBtn = document.getElementById('langBtn');
+      var langMenu = document.getElementById('langMenu');
+      var langFlag = document.getElementById('langFlag');
+      var langCode = document.getElementById('langCode');
+      var flags = { bm: 'https://wabot.io/flags/my.svg', en: 'https://wabot.io/flags/gb.svg' };
+      var labels = { bm: 'Bahasa Melayu', en: 'English' };
+
+      function setLangOpen(open) {
+        langSwitch.classList.toggle('is-open', open);
+        langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        langMenu.hidden = !open;
+      }
+
+      function apply(theme, lang) {
+        root.setAttribute('data-theme', theme);
+        root.setAttribute('data-lang', lang);
+        root.setAttribute('lang', lang === 'en' ? 'en' : 'ms');
+        root.style.colorScheme = theme;
+        langFlag.src = flags[lang];
+        langCode.textContent = lang === 'en' ? 'EN' : 'BM';
+        langBtn.setAttribute('aria-label', 'Language, ' + labels[lang]);
+        var themeLabel = theme === 'dark'
+          ? (lang === 'en' ? 'Switch to light mode' : 'Tukar ke mod cerah')
+          : (lang === 'en' ? 'Switch to dark mode' : 'Tukar ke mod gelap');
+        themeBtn.setAttribute('aria-label', themeLabel);
+        themeBtn.title = themeLabel;
+      }
+
+      var theme = 'light';
+      var lang = 'bm';
+      try {
+        var st = localStorage.getItem('pcm-theme');
+        var sl = localStorage.getItem('pcm-lang');
+        if (st === 'dark' || st === 'light') theme = st;
+        if (sl === 'bm' || sl === 'en') lang = sl;
+      } catch (e) {}
+      apply(theme, lang);
+
+      var ignoreDocClick = false;
+      langBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        setLangOpen(langBtn.getAttribute('aria-expanded') !== 'true');
+        ignoreDocClick = true;
+        setTimeout(function () { ignoreDocClick = false; }, 50);
+      });
+
+      document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+        btn.addEventListener('click', function (event) {
+          event.stopPropagation();
+          lang = btn.getAttribute('data-set-lang');
+          apply(theme, lang);
+          setLangOpen(false);
+          try { localStorage.setItem('pcm-lang', lang); } catch (e) {}
+        });
+      });
+
+      document.addEventListener('click', function (event) {
+        if (ignoreDocClick || langSwitch.contains(event.target)) return;
+        setLangOpen(false);
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') setLangOpen(false);
+      });
+
+      themeBtn.addEventListener('click', function () {
+        theme = theme === 'light' ? 'dark' : 'light';
+        apply(theme, lang);
+        try { localStorage.setItem('pcm-theme', theme); } catch (e) {}
+      });
+
+      menuBtn.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+
+      document.querySelectorAll('.mobile-nav a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('is-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.setAttribute('aria-label', 'Open menu');
+        });
+      });
+
+      function onScroll() {
+        nav.classList.toggle('is-scrolled', (window.scrollY || 0) > 12);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
