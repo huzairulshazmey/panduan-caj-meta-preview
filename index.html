@@ -8,7 +8,7 @@
   <link rel="icon" href="https://wabot.io/favicon-32x32.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --brand: #0072bc;
@@ -951,6 +951,7 @@
       border: 1px solid #d9edf9;
       border-radius: 1.875rem;
       background: linear-gradient(140deg, #d8f2ff, #f3fbff);
+      font-family: Montserrat, Arial, sans-serif;
     }
     @media (min-width: 900px) {
       .ads-visual { min-height: 24.375rem; }
@@ -961,45 +962,63 @@
     }
     .ads-circle {
       position: absolute;
-      width: min(19.375rem, 72%);
-      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      width: 19.375rem;
+      height: 19.375rem;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: var(--brand);
+      background: #0d72bc;
       box-shadow: 0 18px 50px rgba(8, 79, 131, 0.2);
-    }
-    .ads-circle:before {
-      content: "72H";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
       color: #fff;
-      font-size: clamp(2.75rem, 8vw, 4.5rem);
-      font-weight: 700;
+      text-align: center;
+    }
+    .ads-circle strong {
+      display: block;
+      font-size: 4.5rem;
+      font-weight: 800;
       letter-spacing: -0.08em;
+      line-height: 0.9;
+    }
+    .ads-circle span {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.82);
     }
     .ads-tag {
       position: absolute;
       z-index: 1;
-      max-width: 11.5rem;
-      padding: 0.8rem 0.95rem;
-      border-radius: 0.875rem;
+      padding: 13px 15px;
+      border-radius: 14px;
       background: #fff;
       box-shadow: 0 14px 32px rgba(29, 84, 123, 0.14);
       color: #214665;
-      font-size: 0.75rem;
-      font-weight: 700;
-      line-height: 1.4;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
     }
-    .ads-tag.one { left: 1.3rem; top: 3.25rem; }
-    .ads-tag.two { right: 0.95rem; bottom: 3.8rem; }
+    .ads-tag.one { left: 21px; top: 52px; }
+    .ads-tag.two { right: 15px; bottom: 61px; }
     html[data-theme="dark"] .ads-tag {
       background: #111827;
       color: #fff;
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+    }
+    @media (max-width: 520px) {
+      .ads-circle {
+        width: 14.5rem;
+        height: 14.5rem;
+      }
+      .ads-circle strong { font-size: 3.25rem; }
+      .ads-tag.one { left: 12px; top: 28px; }
+      .ads-tag.two { right: 12px; bottom: 28px; }
     }
     .ads-copy {
       display: flex;
@@ -1475,7 +1494,10 @@
       <section class="section">
         <div class="wrap ads-wrap">
           <div class="ads-visual" aria-label="Infografik 72-hour Free Entry Point">
-            <div class="ads-circle" aria-hidden="true"></div>
+            <div class="ads-circle" aria-hidden="true">
+              <strong>72H</strong>
+              <span>Free Entry Point</span>
+            </div>
             <div class="ads-tag one">
               <span data-l="bm">Lead masuk melalui<br>Click-to-WhatsApp</span>
               <span data-l="en">Lead comes in through<br>Click-to-WhatsApp</span>
